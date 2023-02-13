@@ -17,7 +17,9 @@
     "jsonwebtoken": "^9.0.0",
     "morgan": "^1.10.0",
     "pg": "^8.9.0",
-    "prettier": "^2.8.4",
     "sequelize": "^6.28.0"
+  },
+  "devDependencies": {
+    "prettier": "^2.8.4"
   }
 }
