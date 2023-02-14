@@ -29,7 +29,12 @@ const login = async (req, res) => {
     const payload = { id: admin.id, name: admin.name, email: admin.email };
     const token = jwt.sign(payload, JWT_SECRET_KEY, { expiresIn: "1h" });
 
-    return response(res, 200, true, "Login success!", token);
+    return response(res, 200, true, "Login success!", {
+      id: admin.id,
+      name: admin.name,
+      email: admin.email,
+      token,
+    });
   } catch (err) {
     return response(res, err.status || 500, false, err.message, null);
   }

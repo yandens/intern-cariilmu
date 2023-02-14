@@ -13,9 +13,17 @@ const register = async (req, res) => {
     if (adminExist) return response(400, false, "Email is already used!", null);
 
     const encryptedPassword = await bcrypt.hash(password, 10);
-    await Admin.create({ name, email, password: encryptedPassword });
+    const admin = await Admin.create({
+      name,
+      email,
+      password: encryptedPassword,
+    });
 
-    return response(res, 201, true, "Register success!", null);
+    return response(res, 201, true, "Register success!", {
+      id: admin.id,
+      name: admin.name,
+      email: admin.email,
+    });
   } catch (err) {
     return response(res, err.status || 500, false, err.message, null);
   }
