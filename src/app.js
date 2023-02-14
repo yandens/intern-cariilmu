@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use("/api", routes);
 
-app.use((req, res, nextc) => {
+app.use((req, res, next) => {
   return response(res, 404, false, "Are you lost?", null);
 });
 
