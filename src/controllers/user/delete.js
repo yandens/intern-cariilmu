@@ -3,11 +3,11 @@ const response = require("../../utils/response");
 
 const deleteUser = async (req, res) => {
   try {
-    const { email } = req.params;
+    const { id } = req.params;
 
-    if (!email) return response(res, 400, false, "Parameter required!", null);
+    if (!id) return response(res, 400, false, "Parameter required!", null);
 
-    const user = await User.findOne({ where: { email } });
+    const user = await User.findOne({ where: { id } });
     if (!user) return response(res, 404, false, "User not found!", null);
 
     await user.destroy();

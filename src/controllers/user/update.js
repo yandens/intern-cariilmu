@@ -4,18 +4,18 @@ const response = require("../../utils/response");
 
 const update = async (req, res) => {
   try {
-    const { email } = req.params;
+    const { id } = req.params;
     const { newName, newEmail, newPassword } = req.body;
 
-    if (!email) return response(res, 400, false, "Parameter required!", null);
+    if (!id) return response(res, 400, false, "Parameter required!", null);
 
-    const user = await User.findOne({ where: { email } });
+    const user = await User.findOne({ where: { id } });
     if (!user) return response(res, 404, false, "User not found!", null);
 
     const encryptedPassword = await bcrypt.hash(newPassword, 10);
     await User.update(
       { name: newName, email: newEmail, password: encryptedPassword },
-      { where: { email } }
+      { where: { id } }
     );
 
     return response(res, 200, true, "User updated!", {

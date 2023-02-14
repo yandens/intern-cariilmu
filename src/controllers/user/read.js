@@ -3,10 +3,12 @@ const response = require("../../utils/response");
 
 const read = async (req, res) => {
   try {
-    const { email } = req.params;
+    const { id } = req.params;
+
+    if (!id) return response(res, 400, false, "Parameter required!", null);
 
     const user = await User.findOne({
-      where: { email },
+      where: { id },
       attributes: { exclude: ["password"] },
       include: [
         {
