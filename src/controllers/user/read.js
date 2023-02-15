@@ -1,4 +1,4 @@
-const { User, UserCourse } = require("../../models");
+const { User } = require("../../models");
 const response = require("../../utils/response");
 
 const read = async (req, res) => {
@@ -10,12 +10,6 @@ const read = async (req, res) => {
     const user = await User.findOne({
       where: { id },
       attributes: { exclude: ["password"] },
-      include: [
-        {
-          model: UserCourse,
-          as: "userCourse",
-        },
-      ],
     });
     if (!user) return response(res, 404, false, "User not found!", null);
 

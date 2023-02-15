@@ -13,10 +13,11 @@ const update = async (req, res) => {
     if (!user) return response(res, 404, false, "User not found!", null);
 
     const encryptedPassword = await bcrypt.hash(newPassword, 10);
-    await User.update(
-      { name: newName, email: newEmail, password: encryptedPassword },
-      { where: { id } }
-    );
+    await user.update({
+      name: newName,
+      email: newEmail,
+      password: encryptedPassword,
+    });
 
     return response(res, 200, true, "User updated!", {
       id: user.id,

@@ -17,3 +17,5 @@ const deleteUser = async (req, res) => {
     return response(res, err.status || 500, false, err.message, null);
   }
 };
+
+module.exports = deleteUser;
