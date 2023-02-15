@@ -12,7 +12,7 @@ const update = async (req, res) => {
     if (!category)
       return response(res, 404, false, "Course category not found!", null);
 
-    await CourseCategory.update({ name: newCourseCategory }, { where: { id } });
+    await category.update({ name: newCourseCategory });
 
     return response(res, 200, true, "Course category updated!", {
       id: category.id,
