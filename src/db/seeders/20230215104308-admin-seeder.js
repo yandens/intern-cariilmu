@@ -19,6 +19,8 @@ module.exports = {
         name: "admin",
         email: "admin@gmail.com",
         password: encryptedPassword,
+        createdAt: new Date(),
+        updatedAt: new Date(),
       },
     ]);
   },

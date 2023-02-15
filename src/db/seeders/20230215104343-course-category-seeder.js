@@ -15,12 +15,18 @@ module.exports = {
     await queryInterface.bulkInsert("CourseCategories", [
       {
         name: "Back End",
+        createdAt: new Date(),
+        updatedAt: new Date(),
       },
       {
         name: "Front End",
+        createdAt: new Date(),
+        updatedAt: new Date(),
       },
       {
         name: "Full Stack",
+        createdAt: new Date(),
+        updatedAt: new Date(),
       },
     ]);
   },

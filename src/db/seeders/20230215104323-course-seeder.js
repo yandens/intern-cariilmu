@@ -16,22 +16,32 @@ module.exports = {
       {
         course_category_id: 1,
         title: "NodeJs for beginner-expert",
+        createdAt: new Date(),
+        updatedAt: new Date(),
       },
       {
         course_category_id: 1,
         title: "ExpressJs as framework for NodeJs for beginner-expert",
+        createdAt: new Date(),
+        updatedAt: new Date(),
       },
       {
         course_category_id: 2,
         title: "HTML, CSS, Javascript for beginner-expert",
+        createdAt: new Date(),
+        updatedAt: new Date(),
       },
       {
         course_category_id: 2,
         title: "ReactJs for beginner-expert",
+        createdAt: new Date(),
+        updatedAt: new Date(),
       },
       {
         course_category_id: 3,
         title: "ReactJs and ExpressJs for building website for beginner-expert",
+        createdAt: new Date(),
+        updatedAt: new Date(),
       },
     ]);
   },
