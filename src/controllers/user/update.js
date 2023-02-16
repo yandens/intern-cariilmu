@@ -11,6 +11,8 @@ const update = async (req, res) => {
 
     const user = await User.findOne({ where: { id } });
     if (!user) return response(res, 404, false, "User not found!", null);
+    if (user.email === newEmail)
+      return response(res, 404, false, "Email already used!", null);
 
     const encryptedPassword = await bcrypt.hash(newPassword, 10);
     await user.update({

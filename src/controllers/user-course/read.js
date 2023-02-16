@@ -55,7 +55,7 @@ const readCourseWithUser = async (req, res) => {
           as: "userCourse",
           include: [
             {
-              model: "User",
+              model: User,
               as: "user",
               attributes: { exclude: ["password"] },
             },

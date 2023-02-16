@@ -1,6 +1,7 @@
 const { User } = require("../../models");
 const bcrypt = require("bcrypt");
 const response = require("../../utils/response");
+
 const create = async (req, res) => {
   try {
     const { name, email, password } = req.body;
