@@ -13,17 +13,17 @@ router.get(
   courseCategoryController.readCourseCategory.readAll
 );
 router.get(
-  "/detail",
+  "/detail/:id",
   authentication,
   courseCategoryController.readCourseCategory.read
 );
 router.put(
-  "/update",
+  "/update/:id",
   authentication,
   courseCategoryController.updateCourseCategory
 );
 router.delete(
-  "/delete",
+  "/delete/:id",
   authentication,
   courseCategoryController.deleteCourseCategory
 );
