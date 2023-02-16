@@ -14,7 +14,8 @@ const login = async (req, res) => {
         res,
         404,
         false,
-        "These credentials not match with our record"
+        "These credentials not match with our record",
+        null
       );
 
     const match = await bcrypt.compare(password, admin.password);
@@ -23,7 +24,8 @@ const login = async (req, res) => {
         res,
         404,
         false,
-        "These credentials not match with our record"
+        "These credentials not match with our record",
+        null
       );
 
     const payload = { id: admin.id, name: admin.name, email: admin.email };

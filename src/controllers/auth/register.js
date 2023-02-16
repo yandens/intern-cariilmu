@@ -10,7 +10,8 @@ const register = async (req, res) => {
       return response(res, 400, false, "Password doesn't match", null);
 
     const adminExist = await Admin.findOne({ where: { email } });
-    if (adminExist) return response(400, false, "Email is already used!", null);
+    if (adminExist)
+      return response(res, 400, false, "Email is already used!", null);
 
     const encryptedPassword = await bcrypt.hash(password, 10);
     const admin = await Admin.create({
